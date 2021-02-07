@@ -27,7 +27,7 @@ function App() {
       <div className='App'>
         <Grid container direction='row'>
           <Grid item xs />
-          <Grid item xs={8}>
+          <Grid item xs={9}>
             <Grid className={classes.root} container direction='column'>
               <Grid item xs>
                 <Header />
