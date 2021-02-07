@@ -7,7 +7,7 @@ import {
   Box,
   Paper,
   IconButton,
-  CircularProgress,
+  // CircularProgress,
 } from '@material-ui/core';
 import AutorenewIcon from '@material-ui/icons/Autorenew';
 import { fetchTweet } from './../api/api';
