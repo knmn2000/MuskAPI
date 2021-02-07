@@ -1,7 +1,6 @@
 from flask_frozen import Freezer
-from app import MuskAPI
-
-freezer = freezer(MuskAPI)
+from musk import MuskAPI
+freezer = Freezer(MuskAPI)
 
 if __name__ == '__main__':
     freezer.freeze()

@@ -15,6 +15,7 @@ with open('tweets.json') as f:
 
 
 @api.route("/random")
+@api.url_defaults
 class MuskAPI(Resource):
     def get(self):
         return tweets[str(random.randint(0, len(tweets)-1))]

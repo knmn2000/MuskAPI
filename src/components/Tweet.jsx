@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from '@material-ui/core';
 
 export default function Tweet({ tweet }) {
+  if (!tweet) {
+    tweet = {
+      time: '2021-01-28T02:34:17.000Z',
+      tweet: 'It can play Cyberpunk',
+      status: '4472 replies, 9964 Retweets, 199927 likes',
+    };
+  }
   return (
     <div>
       {'{'}

@@ -42,7 +42,7 @@ export default function Usage() {
     tweet: 'It can play Cyberpunk',
     status: '4472 replies, 9964 Retweets, 199927 likes',
   });
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const onFetch = async () => {
     // setIsLoading(true);
     const res = await fetchTweet();
@@ -81,17 +81,17 @@ export default function Usage() {
                 Format:
               </Typography>
               <Box m={1}>
-                {isLoading ? (
+                {/* {isLoading ? (
                   <Grid container justify='space-evenly' spacing={2}>
                     <Grid item>
                       <CircularProgress />
                     </Grid>
                   </Grid>
-                ) : (
-                  <Typography className={classes.format}>
-                    <Tweet tweet={tweet} />
-                  </Typography>
-                )}
+                ) : ( */}
+                <Typography className={classes.format}>
+                  <Tweet tweet={tweet} />
+                </Typography>
+                {/* )} */}
               </Box>
             </Box>
           </Paper>

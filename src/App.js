@@ -7,7 +7,7 @@ import {
   createMuiTheme,
   makeStyles,
 } from '@material-ui/core/styles';
-import { Grid, Typography, Box, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Usage from './components/Usage';
 
 const theme = createMuiTheme({

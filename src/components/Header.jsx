@@ -1,19 +1,6 @@
 import React from 'react';
-import {
-  Typography,
-  Grid,
-  Box,
-  Divider,
-  makeStyles,
-  withStyles,
-} from '@material-ui/core';
-const useStyles = makeStyles({});
+import { Typography, Grid, Box, Divider, withStyles } from '@material-ui/core';
 export default function Header() {
-  const classes = useStyles({
-    divider: {
-      height: '4px',
-    },
-  });
   const StyledDivider = withStyles({
     root: {
       height: '4px',
