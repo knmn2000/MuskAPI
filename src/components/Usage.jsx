@@ -12,6 +12,7 @@ import {
 import AutorenewIcon from '@material-ui/icons/Autorenew';
 import { fetchTweet } from './../api/api';
 import Tweet from './Tweet';
+import useIsMobile from '../hooks/useIsMobile';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -21,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
   },
   format: {
     fontFamily: 'B612 Mono',
-    fontSize: '1.5em',
     wordWrap: 'break-word',
   },
   boxText: {
@@ -42,6 +42,7 @@ export default function Usage() {
     tweet: 'It can play Cyberpunk',
     status: '4472 replies, 9964 Retweets, 199927 likes',
   });
+  const isMobile = useIsMobile();
   // const [isLoading, setIsLoading] = useState(false);
   const onFetch = async () => {
     // setIsLoading(true);
@@ -53,9 +54,13 @@ export default function Usage() {
     <div>
       <Box mt={2} className={classes.box}>
         <Typography variant='h4'>Usage</Typography>
-        <Box m={2}>
+        <Box m={isMobile ? 0 : 2} mt={isMobile ? 1 : 0}>
           <Paper className={classes.paper} elevation={2}>
-            <Grid container direction='row' justify='space-between'>
+            <Grid
+              container
+              direction={isMobile ? 'column' : 'row'}
+              justify='space-between'
+            >
               <Grid item className={classes.getReq}>
                 <Typography variant='h5' className={classes.boxText}>
                   GET:{' '}
@@ -70,7 +75,7 @@ export default function Usage() {
                   </b>
                 </Typography>
               </Grid>
-              <Grid item alignItems='flex-end'>
+              <Grid item style={{ alignSelf: 'flex-end' }}>
                 <IconButton aria-label='refresh' onClick={onFetch}>
                   <AutorenewIcon fontSize='large' />
                 </IconButton>
@@ -88,7 +93,10 @@ export default function Usage() {
                     </Grid>
                   </Grid>
                 ) : ( */}
-                <Typography className={classes.format}>
+                <Typography
+                  style={{ fontSize: isMobile ? '1.4em' : '1.5em' }}
+                  className={classes.format}
+                >
                   <Tweet tweet={tweet} />
                 </Typography>
                 {/* )} */}
