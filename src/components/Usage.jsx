@@ -63,9 +63,10 @@ export default function Usage() {
                     <Link
                       underline='always'
                       color='black'
-                      href='https://musk.api'
+                      href='https://musk-tweet.netlify.app/.netlify/functions/api'
                     >
-                      https://musk.api
+                      {/* https://musk.api */}
+                      https://musk-tweet.netlify.app/.netlify/functions/api
                     </Link>
                   </b>
                 </Typography>
